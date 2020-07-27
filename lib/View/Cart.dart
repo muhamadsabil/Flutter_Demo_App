@@ -238,7 +238,9 @@ class CartState extends State<Cart> {
             Expanded(
 
               child : Column(children: <Widget>[
-                SizedBox(height: 15.0),
+                Container(height: 1.0,color: Colors.grey,padding: EdgeInsets.all(4.0),),
+                SizedBox(height: 10.0),
+
                 Text("Order Total :  "+ ordertotal.toString()+"AED",textAlign: TextAlign.right,style:style.copyWith(
                     color: Colors.black, fontWeight: FontWeight.bold)),
                 SizedBox(height: 5.0),

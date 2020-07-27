@@ -4,6 +4,7 @@ import 'package:demoflutterapp/View/CarouselView.dart';
 import 'package:demoflutterapp/View/HomePage.dart';
 import 'WishList.dart';
 import 'Cart.dart';
+import 'UserAccountPage.dart';
 import 'package:flutter/cupertino.dart';
 
 class StartPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _StartPageState extends State<StartPage> {
     HomePage(),
     WishList(),
     Cart(),
-    Cart()
+    LoginPage(title: 'User',)
 //    SearchPage(),
 //    CartPage(),
 //    PlpViewer()
