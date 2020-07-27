@@ -178,30 +178,30 @@ class MyAccount extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  color: Colors.white70,
-                  height: 60,
-                  width: 400,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Moz notifications',style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 15,
-                        ),
-                        ),
-                        SizedBox(width: 210,),
-                        Icon(Icons.arrow_drop_down,)
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+//              Padding(
+//                padding: const EdgeInsets.all(10.0),
+//                child: Container(
+//                  color: Colors.white70,
+//                  height: 60,
+//                  width: 400,
+//                  child: Padding(
+//                    padding: const EdgeInsets.all(10.0),
+//                    child: Row(
+//                      crossAxisAlignment: CrossAxisAlignment.center,
+//                      children: <Widget>[
+//                        Text(
+//                          'Moz notifications',style: TextStyle(
+//                          fontWeight: FontWeight.w400,
+//                          fontSize: 15,
+//                        ),
+//                        ),
+//                        SizedBox(width: 210,),
+//                        Icon(Icons.arrow_drop_down,)
+//                      ],
+//                    ),
+//                  ),
+//                ),
+//              ),
             ],
           ),
 
