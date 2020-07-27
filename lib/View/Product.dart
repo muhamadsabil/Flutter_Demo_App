@@ -93,33 +93,33 @@ final List<Product> productList = <Product>[
 
   Product(productID: '',
       imageUrl: 'https://images.unsplash.com/photo-1494698853255-d0fa521abc6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2300&q=80',
-      description: 'Apple MacBook Pro , 2.4GHz Intel Core i5 - Space Grey',
+      description: 'Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage, 2.6GHz 9th Gen Intel Core i7) - Space Grey. Four Thunderbolt 3 (USB-C) ports',
       discountedPrice: 3500,
       originalPrice: 4500,
       discount: '30% OFF',
       title: 'Apple MacBook Pro , 2.4GHz Intel Core i5 - Space Grey',
       quantity: 1,
-      specifications: ['Operating System: Pre-loaded Windows 10 Home with lifetime validity','Display: 14-inch HD (1366x768) display','Memory & Storage: 8GB DDR4 |Storage: 1TB 5400 rpm HDD + 256GB SSD','Pre-installed Software: Microsoft Office Home & Student 2019 |In the box: Laptop with included battery, charger'],
+      specifications: ['Ninth-generation 6-core Intel Core i7 processor','Stunning 16-inch Retina display with True Tone technology','AMD Radeon Pro 5300M graphics with GDDR6 memory','Four Thunderbolt 3 (USB-C) ports','Up to 11 hours of battery life','Touch Bar and Touch ID'],
       isWishListed: false
 
 
   ),
   Product(productID: '',
       imageUrl: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80',
-      description: 'Apple MacBook Pro , 2.4GHz Intel Core i5 -  Silver',
+      description: 'Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage, 2.6GHz 9th Gen Intel Core i7) -  Silver. Four Thunderbolt 3 (USB-C) ports',
       discountedPrice: 3500,
       originalPrice: 4500,
       discount: '30% OFF',
       title: 'Apple MacBook Pro , 2.4GHz Intel Core i5 -  Silver',
       quantity: 1,
-      specifications: ['Operating System: Pre-loaded Windows 10 Home with lifetime validity','Display: 14-inch HD (1366x768) display','Memory & Storage: 8GB DDR4 |Storage: 1TB 5400 rpm HDD + 256GB SSD','Pre-installed Software: Microsoft Office Home & Student 2019 |In the box: Laptop with included battery, charger'],
+      specifications: ['Ninth-generation 6-core Intel Core i7 processor','Stunning 16-inch Retina display with True Tone technology','AMD Radeon Pro 5300M graphics with GDDR6 memory','Four Thunderbolt 3 (USB-C) ports','Up to 11 hours of battery life','Touch Bar and Touch ID'],
       isWishListed: false
 
 
   ),
   Product(productID: '45345',
-      imageUrl: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
-      description: 'Apple Watch Series 3 (GPS, 42mm) - Space Grey Aluminium Case with Black Sport Band. Accelerometer and gyroscope . S3 with dual-core processor',
+      imageUrl: 'https://images.unsplash.com/photo-1494858723852-d3cc2477e12c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1956&q=80',
+      description: 'Apple Watch Series 3 (GPS, 42mm) - Space Grey Aluminium Case with silver metal Band. Accelerometer and gyroscope . S3 with dual-core processor',
       discountedPrice: 600,
       originalPrice: 800,
       discount: '35% OFF',

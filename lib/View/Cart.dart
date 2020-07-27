@@ -90,7 +90,19 @@ class CartState extends State<Cart> {
                       SizedBox(
                         height: 5.0,
                       ),
-                      Text("Price : " + item.discountedPrice.toString() + 'AED'),
+                      Row(children: <Widget>[
+                        Text("Price : " + item.discountedPrice.toString() + 'AED'),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(item.originalPrice.toString()+ "AED", style:TextStyle(
+                            color: Colors.grey, fontWeight: FontWeight.normal,decoration:TextDecoration.lineThrough)),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(item.discount, style:TextStyle(
+                            color: Colors.redAccent, fontWeight: FontWeight.normal))
+                      ]),
                       Row(children: <Widget>[
                         Text("Quantity :  "),
 //                    DropDownWidget(items),
@@ -144,46 +156,46 @@ class CartState extends State<Cart> {
         ),
         backgroundColor: Colors.white,
         body:Padding(
-          padding: EdgeInsets.all(100.0),
-       child : Column(
-          
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
+            padding: EdgeInsets.all(100.0),
+            child : Column(
 
-            SizedBox(height: 40.0),
-            IconButton(
-                alignment: Alignment.center,
-                iconSize: 80.0,
-                icon: new Icon(Icons.card_giftcard),
-                color: Colors.lightBlue,
-                onPressed: () {
-                }),
-            Text('Your cart is empty.\n',style :maxFontStyle.copyWith(
-                color: Colors.black, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
-            SizedBox(height: 20.0),
-           Material(
-              elevation: 5.0,
-              borderRadius: BorderRadius.circular(30.0),
-              color: Colors.blue,
-              child: MaterialButton(
-                minWidth: 350.0,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+
+                SizedBox(height: 40.0),
+                IconButton(
+                    alignment: Alignment.center,
+                    iconSize: 80.0,
+                    icon: new Icon(Icons.card_giftcard),
+                    color: Colors.deepPurple[900],
+                    onPressed: () {
+                    }),
+                Text('Your cart is empty.\n',style :maxFontStyle.copyWith(
+                    color: Colors.black, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+                SizedBox(height: 20.0),
+                Material(
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.circular(30.0),
+                  color: Colors.deepPurple[900],
+                  child: MaterialButton(
+                    minWidth: 350.0,
 //                padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OrderReview(title: 'Order Details',)),
-                  );
-                },
-                child: Text("Continue Shopping",
-                    textAlign: TextAlign.center,
-                    style: style.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold)),
-              ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => OrderReview(title: 'Order Details',)),
+                      );
+                    },
+                    child: Text("Continue Shopping",
+                        textAlign: TextAlign.center,
+                        style: style.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
+                  ),
 
-           ),
+                ),
 
-          ],
-        )),
+              ],
+            )),
       );
     }
 

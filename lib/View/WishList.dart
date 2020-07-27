@@ -43,6 +43,7 @@ class _WishListDetailsState extends State<WishListDetails> {
         appBar: AppBar(
           elevation: 0.0,
           title: Text('WishList'),
+          backgroundColor: Colors.deepPurple[900],
         ),
         backgroundColor: Colors.white,
         body:Padding(
@@ -57,7 +58,7 @@ class _WishListDetailsState extends State<WishListDetails> {
                     alignment: Alignment.center,
                     iconSize: 80.0,
                     icon: new Icon(Icons.card_giftcard),
-                    color: Colors.lightBlue,
+                    color: Colors.deepPurple[900],
                     onPressed: () {
                     }),
                 Text('Your wishlist is empty.\n',style :maxFontStyle.copyWith(
@@ -66,7 +67,7 @@ class _WishListDetailsState extends State<WishListDetails> {
                 Material(
                   elevation: 5.0,
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.blue,
+                  color: Colors.deepPurple[900],
                   child: MaterialButton(
                     minWidth: 350.0,
                     onPressed: () {
@@ -91,6 +92,7 @@ class _WishListDetailsState extends State<WishListDetails> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Wish List'),
+         backgroundColor: Colors.deepPurple[900]
       ),
       body: Scrollbar(
         child: ListView(

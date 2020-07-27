@@ -73,7 +73,19 @@ class OrderReviewState extends State<OrderReview> {
                       SizedBox(
                         height: 5.0,
                       ),
-                      Text("Price : " + item.discountedPrice.toString() + 'AED'),
+                      Row(children: <Widget>[
+                        Text("Price : " + item.discountedPrice.toString() + 'AED'),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(item.originalPrice.toString()+ "AED", style:TextStyle(
+                            color: Colors.grey, fontWeight: FontWeight.normal,decoration:TextDecoration.lineThrough)),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(item.discount, style:TextStyle(
+                            color: Colors.redAccent, fontWeight: FontWeight.normal))
+                      ]),
                       SizedBox(
                         height: 10.0,
                       ),

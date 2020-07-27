@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'PLP.dart';
+import 'package:demoflutterapp/main.dart';
 
 class OrderConfirmationPage extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _OrderConfirmationPageState extends State<OrderConfirmationPage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text('order Details'),
+        title: Text('Order Details'),
         backgroundColor: Colors.deepPurple[900],
       ),
       backgroundColor: Colors.white,

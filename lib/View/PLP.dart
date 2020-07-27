@@ -102,6 +102,7 @@ class _ProductContentState extends State<ProductContent> {
 
               Positioned.fill(
                   child: Ink.image(
+                    fit: BoxFit.fill,
                     image:NetworkImage(destination.imageUrl),
                     height: 170.0,
                     width: 530.0,
