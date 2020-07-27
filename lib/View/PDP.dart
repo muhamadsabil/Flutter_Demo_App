@@ -32,6 +32,8 @@ class _PDPState extends State<PDP> {
         appBar: AppBar(
           elevation: 0.0,
           title: Text('Details'),
+          backgroundColor: Colors.deepPurple[900],
+
         ),
         backgroundColor: Colors.white,
         body:Padding(
@@ -106,7 +108,7 @@ class _PDPState extends State<PDP> {
                   Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.blue,
+                    color: Colors.deepPurple[900],
                     child: MaterialButton(
                       minWidth: 250.0,
                       padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
@@ -134,7 +136,7 @@ class _PDPState extends State<PDP> {
                   Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.blue,
+                    color: Colors.deepPurple[900],
                     child: MaterialButton(
                       minWidth: 250.0,
                       padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
@@ -166,7 +168,7 @@ showAlertDialog(BuildContext context) {
   // Create button
 
   Widget cartButton = FlatButton(
-    child: Text("View Cart"),
+    child: Text("View Cart",style: TextStyle(color: Colors.deepPurple[900]),),
     onPressed: () {
 
       Navigator.of(context, rootNavigator: true).pop();
@@ -177,7 +179,7 @@ showAlertDialog(BuildContext context) {
     },
   );
   Widget continueButton = FlatButton(
-    child: Text("Continue Shopping"),
+    child: Text("Continue Shopping",style: TextStyle(color: Colors.deepPurple[900]),),
     onPressed: () {
       Navigator.of(context, rootNavigator: true).pop();
       Navigator.push(

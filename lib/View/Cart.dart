@@ -140,6 +140,7 @@ class CartState extends State<Cart> {
         appBar: AppBar(
           elevation: 0.0,
           title: Text('Cart'),
+          backgroundColor: Colors.deepPurple[900],
         ),
         backgroundColor: Colors.white,
         body:Padding(
@@ -190,7 +191,9 @@ class CartState extends State<Cart> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text("Cart List"),
+        title: Text("Cart"),
+        backgroundColor: Colors.deepPurple[900],
+
       ),
       backgroundColor: Colors.white,
       body: Scrollbar(
@@ -230,7 +233,7 @@ class CartState extends State<Cart> {
                 Material(
                   elevation: 5.0,
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.blue,
+                  color: Colors.deepPurple[900],
                   child: MaterialButton(
                     minWidth: 350.0,
                     padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),

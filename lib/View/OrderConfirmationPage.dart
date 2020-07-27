@@ -16,6 +16,7 @@ class _OrderConfirmationPageState extends State<OrderConfirmationPage> {
       appBar: AppBar(
         elevation: 0.0,
         title: Text('order Details'),
+        backgroundColor: Colors.deepPurple[900],
       ),
       backgroundColor: Colors.white,
       body:Column(
@@ -44,7 +45,7 @@ class _OrderConfirmationPageState extends State<OrderConfirmationPage> {
           Material(
             elevation: 5.0,
             borderRadius: BorderRadius.circular(30.0),
-            color: Colors.blue,
+            color: Colors.deepPurple[900],
             child: MaterialButton(
               minWidth: 350.0,
               padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
