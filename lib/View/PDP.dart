@@ -101,7 +101,7 @@ class _PDPState extends State<PDP> {
                     }).toList(),
                   ),
                   SizedBox(
-                    height: 10.0,
+                    height: 25.0,
                   ),
                   Material(
                     elevation: 5.0,
@@ -129,7 +129,7 @@ class _PDPState extends State<PDP> {
                     ),
                   ),
                   SizedBox(
-                    height: 10.0,
+                    height: 15.0,
                   ),
                   Material(
                     elevation: 5.0,

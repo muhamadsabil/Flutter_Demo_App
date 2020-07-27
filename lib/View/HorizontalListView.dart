@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'PLP.dart';
 
 class HorizontalListView extends StatefulWidget {
   @override
@@ -49,7 +50,12 @@ class Category extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PLP()),
+        );
+      },
       child: Container(
         color: Colors.grey[200],
         width: 110,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'PLP.dart';
 
 class GridViewPage extends StatefulWidget {
   @override
@@ -74,7 +75,12 @@ class Single_prod extends StatelessWidget {
     return Card(
       child: Material(
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PLP()),
+            );
+          },
           child: GridTile(
               footer: Container(
                 color: Colors.white70,
