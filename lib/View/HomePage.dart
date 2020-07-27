@@ -4,7 +4,7 @@ import 'package:demoflutterapp/View/HorizontalListView.dart';
 import 'package:demoflutterapp/View/GridView.dart';
 import 'package:demoflutterapp/View/RoundedBrandsView.dart';
 import 'package:demoflutterapp/View/BottomCarouselView.dart';
-
+import 'MainDrawer.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -14,6 +14,41 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Moz Stuffs',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Roboto',
+            letterSpacing: 4,
+          ),
+        ),
+        backgroundColor: Colors.deepPurple[900],
+        actions: <Widget>[
+          new IconButton(
+              icon: (Icon(
+                Icons.bookmark,
+                color: Colors.white,
+              )),
+              onPressed: () {
+//            Navigator.pushNamed(context, 'cartPage');
+              }),
+          new IconButton(
+              icon: (Icon(
+                Icons.shopping_cart,
+                color: Colors.white,
+              )),
+              onPressed: () {}),
+          new IconButton(
+              icon: (Icon(
+                Icons.search,
+                color: Colors.white,
+              )),
+              onPressed: () {}),
+        ],
+      ),
+      drawer: MainDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(

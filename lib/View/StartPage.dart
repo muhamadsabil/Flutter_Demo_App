@@ -34,41 +34,6 @@ class _StartPageState extends State<StartPage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Moz Stuffs',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Roboto',
-            letterSpacing: 4,
-          ),
-        ),
-        backgroundColor: Colors.deepPurple[900],
-        actions: <Widget>[
-          new IconButton(
-              icon: (Icon(
-                Icons.bookmark,
-                color: Colors.white,
-              )),
-              onPressed: () {
-//            Navigator.pushNamed(context, 'cartPage');
-              }),
-          new IconButton(
-              icon: (Icon(
-                Icons.shopping_cart,
-                color: Colors.white,
-              )),
-              onPressed: () {}),
-          new IconButton(
-              icon: (Icon(
-                Icons.search,
-                color: Colors.white,
-              )),
-              onPressed: () {}),
-        ],
-      ),
-      drawer: MainDrawer(),
       body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTappedBar,
