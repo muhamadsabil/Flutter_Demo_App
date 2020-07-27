@@ -74,7 +74,7 @@ final List<Product> productList = <Product>[
       discount: '20% OFF',
       title: 'Lenovo Ideapad Slim 3i 10th Gen Intel Core i5',
       quantity: 1,
-      specifications: ['Operating System: Pre-loaded Windows 10 Home with lifetime validity\n','Display: 14-inch HD (1366x768) display\n','Memory & Storage: 8GB DDR4 |Storage: 1TB 5400 rpm HDD + 256GB SSD','Pre-installed Software: Microsoft Office Home & Student 2019 |In the box: Laptop with included battery, charger'],
+      specifications: ['Operating System: Pre-loaded Windows 10 Home with lifetime validity','Display: 14-inch HD (1366x768) display','Memory & Storage: 8GB DDR4 |Storage: 1TB 5400 rpm HDD + 256GB SSD','Pre-installed Software: Microsoft Office Home & Student 2019 |In the box: Laptop with included battery, charger'],
       isWishListed: false
 
   ),
