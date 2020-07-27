@@ -160,6 +160,7 @@ class CartState extends State<Cart> {
         appBar: AppBar(
           elevation: 0.0,
           title: Text('Cart'),
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.deepPurple[900],
         ),
         backgroundColor: Colors.white,
@@ -238,7 +239,16 @@ class CartState extends State<Cart> {
             Expanded(
 
               child : Column(children: <Widget>[
-                Container(height: 1.0,color: Colors.grey,padding: EdgeInsets.all(4.0),),
+                Container(height: 1.0,padding: EdgeInsets.all(4.0),decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border(
+                      left: BorderSide(color: Colors.grey[100], width: 3.0),
+                      right: BorderSide(color: Colors.grey[100], width: 3.0),
+
+                      top: BorderSide(color: Colors.grey[100], width: 3.0),
+                      bottom: BorderSide(color: Colors.grey[100], width: 3.0),
+//              top: BorderSide(color: Colors.grey[100], width: 1.0),
+                    )),),
                 SizedBox(height: 10.0),
 
                 Text("Order Total :  "+ ordertotal.toString()+"AED",textAlign: TextAlign.right,style:style.copyWith(

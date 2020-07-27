@@ -183,6 +183,7 @@ class _PLPDetailsState extends State<PLPDetails> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('PLP'),
+        automaticallyImplyLeading: true,
         backgroundColor: Colors.deepPurple[900],
       ),
       body: Scrollbar(

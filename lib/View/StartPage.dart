@@ -22,7 +22,7 @@ class _StartPageState extends State<StartPage> {
     HomePage(),
     WishList(),
     Cart(),
-    LoginPage(title: 'User',)
+    MyAccount()
 //    SearchPage(),
 //    CartPage(),
 //    PlpViewer()
