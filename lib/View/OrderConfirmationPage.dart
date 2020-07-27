@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'PLP.dart';
+import 'StartPage.dart';
 import 'package:demoflutterapp/main.dart';
+import 'Product.dart';
 
 class OrderConfirmationPage extends StatefulWidget {
   @override
@@ -51,11 +52,13 @@ class _OrderConfirmationPageState extends State<OrderConfirmationPage> {
               minWidth: 350.0,
               padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
               onPressed: () {
+               cartList.clear();
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StartPage()));
 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PLP()),
-                );
+//                Navigator.push(
+//                  context,
+//                  MaterialPageRoute(builder: (context) => PLP()),
+//                );
               },
               child: Text("Continue Shopping",
                   textAlign: TextAlign.center,

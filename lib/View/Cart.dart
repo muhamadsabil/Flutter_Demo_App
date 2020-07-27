@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'DropDownComponent.dart';
 import 'Product.dart';
 import 'OrderReviewPage.dart';
+import 'PDP.dart';
+import 'PLP.dart';
 
 class Cart extends StatefulWidget {
 
@@ -39,6 +41,7 @@ class CartState extends State<Cart> {
         child: Row(
           children: <Widget>[
             Container(
+
               alignment: Alignment.topLeft,
               height: 100.0,
               width: 100.0,
@@ -55,12 +58,17 @@ class CartState extends State<Cart> {
             Expanded(
                 child: Padding(
                   padding: EdgeInsets.only(top: 10.0, left: 15.0),
-                  child: Column(
+                  child: InkWell(
+                    onTap: () {
+                      print('Card was tapped');
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => PDP(item)));
+                    },
+                    child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       Row(
                         children: <Widget>[
-                          Expanded(
+                      Expanded(
                             child: Text(
                               item.title,
                               style: TextStyle(
@@ -128,7 +136,7 @@ class CartState extends State<Cart> {
                       ]),
                     ],
                   ),
-                ))
+                )))
           ],
         ),
       ),
@@ -159,7 +167,7 @@ class CartState extends State<Cart> {
             padding: EdgeInsets.all(100.0),
             child : Column(
 
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
 
                 SizedBox(height: 40.0),
@@ -183,8 +191,9 @@ class CartState extends State<Cart> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => OrderReview(title: 'Order Details',)),
+                        MaterialPageRoute(builder: (context) => PLP()),
                       );
+
                     },
                     child: Text("Continue Shopping",
                         textAlign: TextAlign.center,

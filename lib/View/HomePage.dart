@@ -5,6 +5,7 @@ import 'package:demoflutterapp/View/GridView.dart';
 import 'package:demoflutterapp/View/RoundedBrandsView.dart';
 import 'package:demoflutterapp/View/BottomCarouselView.dart';
 import 'MainDrawer.dart';
+import 'PLP.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -51,7 +52,13 @@ class _HomePageState extends State<HomePage> {
       drawer: MainDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: ListView(
+        child: InkWell(
+            onTap: () {
+              print('Card was tapped');
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => PLP()));
+             // Navigator.of(context).push(context, MaterialPageRoute(builder: (context) => PLP()));
+            },
+            child: ListView(
           children: <Widget>[
             CarouselView(),
             SizedBox(
@@ -124,7 +131,7 @@ class _HomePageState extends State<HomePage> {
               child: BottomCarouselView(),
             ),
           ],
-        ),
+        )),
       ),
     );
   }

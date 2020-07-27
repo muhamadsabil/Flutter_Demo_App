@@ -4,6 +4,7 @@ import 'package:demoflutterapp/View/CarouselView.dart';
 import 'package:demoflutterapp/View/HomePage.dart';
 import 'WishList.dart';
 import 'Cart.dart';
+import 'package:flutter/cupertino.dart';
 
 class StartPage extends StatefulWidget {
   @override
@@ -36,6 +37,7 @@ class _StartPageState extends State<StartPage> {
     return Scaffold(
       body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
         onTap: onTappedBar,
         currentIndex: _currentIndex,
         items: [

@@ -108,12 +108,17 @@ class _PDPState extends State<PDP> {
                   SizedBox(
                     height: 25.0,
                   ),
+              Column(
+//                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
                   Material(
+
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.deepPurple[900],
                     child: MaterialButton(
-                      minWidth: 250.0,
+                      clipBehavior: Clip.hardEdge,
+                      minWidth: 350.0,
                       padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
                       onPressed: () {
 
@@ -141,7 +146,8 @@ class _PDPState extends State<PDP> {
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.deepPurple[900],
                     child: MaterialButton(
-                      minWidth: 250.0,
+                      minWidth: 350.0,
+
                       padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
 
                       child: Text(wishListText,
@@ -161,7 +167,7 @@ class _PDPState extends State<PDP> {
                   ),
                   SizedBox(
                     height: 15.0,
-                  ),
+                  )]),
                 ],
               ),
             )
