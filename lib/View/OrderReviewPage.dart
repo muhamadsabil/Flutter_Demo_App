@@ -73,7 +73,19 @@ class OrderReviewState extends State<OrderReview> {
                       SizedBox(
                         height: 5.0,
                       ),
-                      Text("Price : " + item.discountedPrice.toString() + 'AED'),
+                      Row(children: <Widget>[
+                        Text("Price : " + item.discountedPrice.toString() + 'AED'),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(item.originalPrice.toString()+ "AED", style:TextStyle(
+                            color: Colors.grey, fontWeight: FontWeight.normal,decoration:TextDecoration.lineThrough)),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(item.discount, style:TextStyle(
+                            color: Colors.redAccent, fontWeight: FontWeight.normal))
+                      ]),
                       SizedBox(
                         height: 10.0,
                       ),
@@ -103,6 +115,7 @@ class OrderReviewState extends State<OrderReview> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
+        backgroundColor: Colors.deepPurple[900],
         title: Text(title),
       ),
       backgroundColor: Colors.white,
@@ -206,7 +219,7 @@ class OrderReviewState extends State<OrderReview> {
                 Material(
                   elevation: 5.0,
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.blue,
+                  color: Colors.deepPurple[900],
                   child: MaterialButton(
                     minWidth: 350.0,
                     padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),

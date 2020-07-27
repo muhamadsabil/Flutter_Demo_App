@@ -102,6 +102,7 @@ class _ProductContentState extends State<ProductContent> {
 
               Positioned.fill(
                   child: Ink.image(
+                    fit: BoxFit.fill,
                     image:NetworkImage(destination.imageUrl),
                     height: 170.0,
                     width: 530.0,
@@ -182,6 +183,8 @@ class _PLPDetailsState extends State<PLPDetails> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('PLP'),
+        automaticallyImplyLeading: true,
+        backgroundColor: Colors.deepPurple[900],
       ),
       body: Scrollbar(
         child: ListView(

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'DropDownComponent.dart';
 import 'Product.dart';
 import 'OrderReviewPage.dart';
+import 'PDP.dart';
+import 'PLP.dart';
 
 class Cart extends StatefulWidget {
 
@@ -39,6 +41,7 @@ class CartState extends State<Cart> {
         child: Row(
           children: <Widget>[
             Container(
+
               alignment: Alignment.topLeft,
               height: 100.0,
               width: 100.0,
@@ -55,12 +58,17 @@ class CartState extends State<Cart> {
             Expanded(
                 child: Padding(
                   padding: EdgeInsets.only(top: 10.0, left: 15.0),
-                  child: Column(
+                  child: InkWell(
+                    onTap: () {
+                      print('Card was tapped');
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => PDP(item)));
+                    },
+                    child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       Row(
                         children: <Widget>[
-                          Expanded(
+                      Expanded(
                             child: Text(
                               item.title,
                               style: TextStyle(
@@ -90,7 +98,19 @@ class CartState extends State<Cart> {
                       SizedBox(
                         height: 5.0,
                       ),
-                      Text("Price : " + item.discountedPrice.toString() + 'AED'),
+                      Row(children: <Widget>[
+                        Text("Price : " + item.discountedPrice.toString() + 'AED'),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(item.originalPrice.toString()+ "AED", style:TextStyle(
+                            color: Colors.grey, fontWeight: FontWeight.normal,decoration:TextDecoration.lineThrough)),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(item.discount, style:TextStyle(
+                            color: Colors.redAccent, fontWeight: FontWeight.normal))
+                      ]),
                       Row(children: <Widget>[
                         Text("Quantity :  "),
 //                    DropDownWidget(items),
@@ -116,7 +136,7 @@ class CartState extends State<Cart> {
                       ]),
                     ],
                   ),
-                ))
+                )))
           ],
         ),
       ),
@@ -140,49 +160,52 @@ class CartState extends State<Cart> {
         appBar: AppBar(
           elevation: 0.0,
           title: Text('Cart'),
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.deepPurple[900],
         ),
         backgroundColor: Colors.white,
         body:Padding(
-          padding: EdgeInsets.all(100.0),
-       child : Column(
-          
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
+            padding: EdgeInsets.all(100.0),
+            child : Column(
 
-            SizedBox(height: 40.0),
-            IconButton(
-                alignment: Alignment.center,
-                iconSize: 80.0,
-                icon: new Icon(Icons.card_giftcard),
-                color: Colors.lightBlue,
-                onPressed: () {
-                }),
-            Text('Your cart is empty.\n',style :maxFontStyle.copyWith(
-                color: Colors.black, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
-            SizedBox(height: 20.0),
-           Material(
-              elevation: 5.0,
-              borderRadius: BorderRadius.circular(30.0),
-              color: Colors.blue,
-              child: MaterialButton(
-                minWidth: 350.0,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+
+                SizedBox(height: 40.0),
+                IconButton(
+                    alignment: Alignment.center,
+                    iconSize: 80.0,
+                    icon: new Icon(Icons.card_giftcard),
+                    color: Colors.deepPurple[900],
+                    onPressed: () {
+                    }),
+                Text('Your cart is empty.\n',style :maxFontStyle.copyWith(
+                    color: Colors.black, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+                SizedBox(height: 20.0),
+                Material(
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.circular(30.0),
+                  color: Colors.deepPurple[900],
+                  child: MaterialButton(
+                    minWidth: 350.0,
 //                padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OrderReview(title: 'Order Details',)),
-                  );
-                },
-                child: Text("Continue Shopping",
-                    textAlign: TextAlign.center,
-                    style: style.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold)),
-              ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PLP()),
+                      );
 
-           ),
+                    },
+                    child: Text("Continue Shopping",
+                        textAlign: TextAlign.center,
+                        style: style.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
+                  ),
 
-          ],
-        )),
+                ),
+
+              ],
+            )),
       );
     }
 
@@ -190,7 +213,9 @@ class CartState extends State<Cart> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text("Cart List"),
+        title: Text("Cart"),
+        backgroundColor: Colors.deepPurple[900],
+
       ),
       backgroundColor: Colors.white,
       body: Scrollbar(
@@ -214,7 +239,18 @@ class CartState extends State<Cart> {
             Expanded(
 
               child : Column(children: <Widget>[
-                SizedBox(height: 15.0),
+                Container(height: 1.0,padding: EdgeInsets.all(4.0),decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border(
+                      left: BorderSide(color: Colors.grey[100], width: 3.0),
+                      right: BorderSide(color: Colors.grey[100], width: 3.0),
+
+                      top: BorderSide(color: Colors.grey[100], width: 3.0),
+                      bottom: BorderSide(color: Colors.grey[100], width: 3.0),
+//              top: BorderSide(color: Colors.grey[100], width: 1.0),
+                    )),),
+                SizedBox(height: 10.0),
+
                 Text("Order Total :  "+ ordertotal.toString()+"AED",textAlign: TextAlign.right,style:style.copyWith(
                     color: Colors.black, fontWeight: FontWeight.bold)),
                 SizedBox(height: 5.0),
@@ -230,7 +266,7 @@ class CartState extends State<Cart> {
                 Material(
                   elevation: 5.0,
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.blue,
+                  color: Colors.deepPurple[900],
                   child: MaterialButton(
                     minWidth: 350.0,
                     padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),

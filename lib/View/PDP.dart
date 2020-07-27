@@ -22,7 +22,7 @@ class _PDPState extends State<PDP> {
   var wishListText;
 
   TextStyle minFontstyle = TextStyle(fontFamily: 'Montserrat', fontSize: 13.0);
-  TextStyle maxFontstyle = TextStyle(fontFamily: 'Montserrat', fontSize: 14.0);
+  TextStyle maxFontstyle = TextStyle(fontFamily: 'Montserrat', fontSize: 15.0);
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +32,8 @@ class _PDPState extends State<PDP> {
         appBar: AppBar(
           elevation: 0.0,
           title: Text('Details'),
+          backgroundColor: Colors.deepPurple[900],
+
         ),
         backgroundColor: Colors.white,
         body:Padding(
@@ -40,17 +42,20 @@ class _PDPState extends State<PDP> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
+                  SizedBox(
+                    height: 10.0,
+                  ),
                   new Text(itemDetail.title, style:maxFontstyle.copyWith(
                       color: Colors.black, fontWeight: FontWeight.bold),
                     maxLines: 2,),
                   SizedBox(
-                    height: 10.0,
+                    height: 20.0,
                   ),
                   new Image(
                     image: NetworkImage(itemDetail.imageUrl)
                   ),
                   SizedBox(
-                    height: 10.0,
+                    height: 15.0,
                   ),
                   Row(
                     children: <Widget>[
@@ -93,7 +98,7 @@ class _PDPState extends State<PDP> {
                     padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
                     children: itemDetail.specifications.map<Widget>((String spec) {
                       Widget child;
-                      child = Text(spec);
+                      child = Text("\u2022 " + spec + "\n");
                       return Container(
                         margin: const EdgeInsets.only(bottom: 2.0),
                         child: child,
@@ -103,12 +108,17 @@ class _PDPState extends State<PDP> {
                   SizedBox(
                     height: 25.0,
                   ),
+              Column(
+//                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
                   Material(
+
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.blue,
+                    color: Colors.deepPurple[900],
                     child: MaterialButton(
-                      minWidth: 250.0,
+                      clipBehavior: Clip.hardEdge,
+                      minWidth: 350.0,
                       padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
                       onPressed: () {
 
@@ -134,9 +144,10 @@ class _PDPState extends State<PDP> {
                   Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.blue,
+                    color: Colors.deepPurple[900],
                     child: MaterialButton(
-                      minWidth: 250.0,
+                      minWidth: 350.0,
+
                       padding: EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 15.0),
 
                       child: Text(wishListText,
@@ -154,6 +165,9 @@ class _PDPState extends State<PDP> {
                       },
                     ),
                   ),
+                  SizedBox(
+                    height: 15.0,
+                  )]),
                 ],
               ),
             )
@@ -166,7 +180,7 @@ showAlertDialog(BuildContext context) {
   // Create button
 
   Widget cartButton = FlatButton(
-    child: Text("View Cart"),
+    child: Text("View Cart",style: TextStyle(color: Colors.deepPurple[900]),),
     onPressed: () {
 
       Navigator.of(context, rootNavigator: true).pop();
@@ -177,7 +191,7 @@ showAlertDialog(BuildContext context) {
     },
   );
   Widget continueButton = FlatButton(
-    child: Text("Continue Shopping"),
+    child: Text("Continue Shopping",style: TextStyle(color: Colors.deepPurple[900]),),
     onPressed: () {
       Navigator.of(context, rootNavigator: true).pop();
       Navigator.push(
@@ -189,9 +203,9 @@ showAlertDialog(BuildContext context) {
 
   // Create AlertDialog
   AlertDialog alert = AlertDialog(
+
     content: Text("Item has been added to your cart successfully."),
-//    content: Text("User details have been saved successfully"),
-  contentPadding: EdgeInsets.fromLTRB(10.0, 15.0, 5.0, 0.0),
+  contentPadding: EdgeInsets.fromLTRB(10.0, 20.0, 5.0, 0.0),
     actions: [
       continueButton,cartButton,
     ],
