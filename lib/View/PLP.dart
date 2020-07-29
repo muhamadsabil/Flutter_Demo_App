@@ -12,9 +12,9 @@ class PLP extends StatelessWidget {
   final String title;
 
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Electronics',
-        home: PLPDetails()
+    return Scaffold(
+      body: PLPDetails(),
+//        title: 'Electronics',
     ); // define it once at root level.
   }
 }
@@ -31,7 +31,6 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-//    var wishListText = productDetail.isWishListed ? IconButton(Ic) : ;
 
     return SafeArea(
       top: false,
@@ -117,6 +116,12 @@ class _ProductContentState extends State<ProductContent> {
                       setState(() {
                         print('wishlist');
                         destination.isWishListed = !destination.isWishListed;
+                        if(destination.isWishListed){
+                          showAlertDialog(context, '    Item was added to your wishlist !     ');
+                        }
+                        else{
+                          showAlertDialog(context, '    Item was removed from your wishlist !   ');
+                        }
 
                       });
 
@@ -182,7 +187,7 @@ class _PLPDetailsState extends State<PLPDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PLP'),
+        title: const Text('Electronics'),
         automaticallyImplyLeading: true,
         backgroundColor: Colors.deepPurple[900],
       ),
@@ -201,4 +206,36 @@ class _PLPDetailsState extends State<PLPDetails> {
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context ,String message) {
+  // Create button
+
+  Widget okButton = FlatButton(
+    child: Text("Ok",style: TextStyle(color: Colors.deepPurple[900]),),
+    onPressed: () {
+
+      Navigator.of(context, rootNavigator: true).pop();
+
+    },
+  );
+
+
+  // Create AlertDialog
+  AlertDialog alert = AlertDialog(
+
+    content: Text(message),
+    contentPadding: EdgeInsets.fromLTRB(10.0, 20.0, 5.0, 0.0),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

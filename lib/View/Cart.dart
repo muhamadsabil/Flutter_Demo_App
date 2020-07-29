@@ -22,7 +22,46 @@ class CartState extends State<Cart> {
   List<Product> cartItems = cartList;
 
   num ordertotal = 0;
+  showAlertDialog(BuildContext context ,int index) {
+    // Create button
 
+    Widget cartButton = FlatButton(
+      child: Text("Yes",style: TextStyle(color: Colors.deepPurple[900]),),
+      onPressed: () {
+
+        Navigator.of(context, rootNavigator: true).pop();
+        setState(() {
+
+          cartList.removeAt(index);
+        });
+
+      },
+    );
+    Widget continueButton = FlatButton(
+      child: Text("No",style: TextStyle(color: Colors.deepPurple[900]),),
+      onPressed: () {
+        Navigator.of(context, rootNavigator: true).pop();
+      },
+    );
+
+    // Create AlertDialog
+    AlertDialog alert = AlertDialog(
+
+      content: Text("Are you sure you want to delete the item from your cart?"),
+      contentPadding: EdgeInsets.fromLTRB(10.0, 20.0, 5.0, 0.0),
+      actions: [
+        continueButton,cartButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
   Widget generateCart(Product item) {
 
     String _dropDownButtonValue = item.quantity.toString();
@@ -81,14 +120,9 @@ class CartState extends State<Cart> {
                               child: IconButton(
                                   icon: new Icon(Icons.delete),
                                   onPressed: () {
+                                    var itemIndex = cartList.indexOf(item);
 
-                                    setState(() {
-
-                                      var itemIndex = cartList.indexOf(item);
-                                      cartList.removeAt(itemIndex);
-                                    });
-
-
+                                    showAlertDialog(context,itemIndex);
 
                                   }),
                             ),
@@ -160,7 +194,7 @@ class CartState extends State<Cart> {
         appBar: AppBar(
           elevation: 0.0,
           title: Text('Cart'),
-          automaticallyImplyLeading: false,
+//          automaticallyImplyLeading: false,
           backgroundColor: Colors.deepPurple[900],
         ),
         backgroundColor: Colors.white,

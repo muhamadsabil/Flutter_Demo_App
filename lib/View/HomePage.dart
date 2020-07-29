@@ -6,6 +6,8 @@ import 'package:demoflutterapp/View/RoundedBrandsView.dart';
 import 'package:demoflutterapp/View/BottomCarouselView.dart';
 import 'MainDrawer.dart';
 import 'PLP.dart';
+import 'WishList.dart';
+import 'Cart.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -17,30 +19,38 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Moz Stuffs',
+          'Moz Electronics',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
             fontFamily: 'Roboto',
-            letterSpacing: 4,
+            letterSpacing: 1,
           ),
         ),
         backgroundColor: Colors.deepPurple[900],
         actions: <Widget>[
           new IconButton(
               icon: (Icon(
-                Icons.bookmark,
+                Icons.favorite,
                 color: Colors.white,
               )),
               onPressed: () {
-//            Navigator.pushNamed(context, 'cartPage');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => WishList()),
+                );
               }),
           new IconButton(
               icon: (Icon(
                 Icons.shopping_cart,
                 color: Colors.white,
               )),
-              onPressed: () {}),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Cart()),
+                );
+              }),
           new IconButton(
               icon: (Icon(
                 Icons.search,

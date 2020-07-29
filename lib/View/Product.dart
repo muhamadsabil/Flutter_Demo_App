@@ -68,13 +68,13 @@ final List<Product> productList = <Product>[
   ),
   Product(productID: '123',
       imageUrl: 'https://images.unsplash.com/photo-1527434171365-3d9f55f5fb78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-      description: 'Lenovo Ideapad Slim 3i 10th Gen Intel Core i5 Lenovo Ideapad Slim 3i 10th Gen Intel Core i5Lenovo Ideapad Slim 3i 10th Gen Intel Core i5Lenovo Ideapad Slim 3i 10th Gen Intel Core i5Lenovo Ideapad Slim 3i 10th Gen Intel Core i5Lenovo Ideapad Slim 3i 10th Gen Intel Core i5',
+      description: 'Lenovo Ideapad S540 Intel Core i5 10th Gen 15.6 inch FHD Thin and Light Laptop (8GB/1TB+256GB SSD/Windows 10/Office/NVIDIA MX250 2GB Graphics/Mineral Grey/1.8Kg), 81NG00C1IN',
       discountedPrice: 4500,
       originalPrice: 5000,
       discount: '20% OFF',
-      title: 'Lenovo Ideapad Slim 3i 10th Gen Intel Core i5',
+      title: 'Lenovo Ideapad S540 Intel Core i5 10th Gen 15.6 inch FHD',
       quantity: 1,
-      specifications: ['Operating System: Pre-loaded Windows 10 Home with lifetime validity','Display: 14-inch HD (1366x768) display','Memory & Storage: 8GB DDR4 |Storage: 1TB 5400 rpm HDD + 256GB SSD','Pre-installed Software: Microsoft Office Home & Student 2019 |In the box: Laptop with included battery, charger'],
+      specifications: ['Operating System: Pre-loaded Windows 10 Home with lifetime validity','Display: 15.6-inch HD (1366x768) display','Memory & Storage: 8GB DDR4 |Storage: 1TB 5400 rpm HDD + 256GB SSD','Pre-installed Software: Microsoft Office Home & Student 2019 |In the box: Laptop with included battery, charger'],
       isWishListed: false
 
   ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'Cart.dart';
+import 'UserAccountPage.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -31,7 +33,7 @@ class MainDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home, color: Colors.deepPurple[900]),
             onTap: () {
-              Navigator.pushNamed(context, 'SignIn');
+              Navigator.pop(context);
             },
             title: Text(
               'Home',
@@ -44,7 +46,11 @@ class MainDrawer extends StatelessWidget {
             leading:
                 Icon(Icons.supervisor_account, color: Colors.deepPurple[900]),
             onTap: () {
-              Navigator.pushNamed(context, 'SignUp');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyAccount()),
+              );
+
             },
             title: Text(
               'My account',
@@ -55,7 +61,10 @@ class MainDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.category, color: Colors.deepPurple[900]),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+
+            },
             title: Text(
               'Categories',
               style: TextStyle(
@@ -68,7 +77,10 @@ class MainDrawer extends StatelessWidget {
               Icons.settings,
               color: Colors.deepPurple[900],
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+
+            },
             title: Text(
               'Settings',
               style: TextStyle(
@@ -81,7 +93,10 @@ class MainDrawer extends StatelessWidget {
               Icons.info,
               color: Colors.deepPurple[900],
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+
+            },
             title: Text(
               'About',
               style: TextStyle(

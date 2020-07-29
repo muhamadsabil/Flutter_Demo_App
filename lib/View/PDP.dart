@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'Product.dart';
 import 'Cart.dart';
+import 'PLP.dart';
 
 class PDP extends StatefulWidget {
   Product itemDetail;
@@ -21,8 +22,8 @@ class _PDPState extends State<PDP> {
   }
   var wishListText;
 
-  TextStyle minFontstyle = TextStyle(fontFamily: 'Montserrat', fontSize: 13.0);
-  TextStyle maxFontstyle = TextStyle(fontFamily: 'Montserrat', fontSize: 15.0);
+  TextStyle minFontstyle = TextStyle(fontFamily: 'Montserrat', fontSize: 15.0);
+  TextStyle maxFontstyle = TextStyle(fontFamily: 'Montserrat', fontSize: 16.0);
 
   @override
   Widget build(BuildContext context) {
@@ -36,26 +37,30 @@ class _PDPState extends State<PDP> {
 
         ),
         backgroundColor: Colors.white,
-        body:Padding(
-            padding: EdgeInsets.all(10.0),
-            child : SingleChildScrollView( //add to Scroll whole screen
+        body: SingleChildScrollView( //add to Scroll whole screen
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
+                  new Image(
+
+                    height: 350.0,
+                    fit: BoxFit.fitHeight,
+                    image: NetworkImage(itemDetail.imageUrl)
+                  ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(20, 20, 10, 10),
+            child :Column(
+
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
                   SizedBox(
-                    height: 10.0,
+                    height: 15.0,
                   ),
                   new Text(itemDetail.title, style:maxFontstyle.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                      color: Colors.black, fontWeight: FontWeight.bold,fontSize: 17.0),
                     maxLines: 2,),
                   SizedBox(
                     height: 20.0,
-                  ),
-                  new Image(
-                    image: NetworkImage(itemDetail.imageUrl)
-                  ),
-                  SizedBox(
-                    height: 15.0,
                   ),
                   Row(
                     children: <Widget>[
@@ -98,7 +103,8 @@ class _PDPState extends State<PDP> {
                     padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
                     children: itemDetail.specifications.map<Widget>((String spec) {
                       Widget child;
-                      child = Text("\u2022 " + spec + "\n");
+                      child = Text("\u2022 " + spec + "\n", style:maxFontstyle.copyWith(
+                          color: Colors.black, fontWeight: FontWeight.normal));
                       return Container(
                         margin: const EdgeInsets.only(bottom: 2.0),
                         child: child,
@@ -108,6 +114,7 @@ class _PDPState extends State<PDP> {
                   SizedBox(
                     height: 25.0,
                   ),
+                ])),
               Column(
 //                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
@@ -129,7 +136,7 @@ class _PDPState extends State<PDP> {
                           cartList.add(itemDetail);
                         }
 
-                        showAlertDialog(context);
+                        showCartAlertDialog(context);
 
                       },
                       child: Text("Add To Cart",
@@ -155,13 +162,22 @@ class _PDPState extends State<PDP> {
                           style: minFontstyle.copyWith(
                               color: Colors.white, fontWeight: FontWeight.bold)),
                       onPressed: () {
+
                         setState(() {
                           itemDetail.isWishListed = !itemDetail.isWishListed;
+
+
+                          if(itemDetail.isWishListed){
+                            showAlertDialog(context, '    Item was added to your wishlist!     ');
+                          }
+                          else{
+                            showAlertDialog(context, '    Item was removed from your wishlist!   ');
+                          }
+
+
+
                         });
-//                Navigator.push(
-//                  context,
-//                  MaterialPageRoute(builder: (context) => OrderReview(title: 'Order Details',)),
-//                );
+
                       },
                     ),
                   ),
@@ -171,12 +187,11 @@ class _PDPState extends State<PDP> {
                 ],
               ),
             )
-        )
     );
   }
 }
 
-showAlertDialog(BuildContext context) {
+showCartAlertDialog(BuildContext context) {
   // Create button
 
   Widget cartButton = FlatButton(
